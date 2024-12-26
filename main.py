@@ -27,35 +27,45 @@ for i in range(5):
     option.click()
 
     # 2. Bạn đang là sinh viên năm mấy?
-    choices = ['//*[@id="i20"]/div[3]/div', '//*[@id="i23"]/div[3]/div', '//*[@id="i26"]/div[3]/div', '//*[@id="i29"]/div[3]/div', '//*[@id="i32"]/div[3]/div']
+    choices = ['//*[@id="i20"]/div[3]/div', 
+               '//*[@id="i23"]/div[3]/div', 
+               '//*[@id="i26"]/div[3]/div', 
+               '//*[@id="i29"]/div[3]/div', 
+               '//*[@id="i32"]/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
     time.sleep(0.01)
     option.click()
 
     # 3. Bạn đã từng tham gia các khóa học hoặc cuộc thi liên quan đến khởi nghiệp chưa?
-    choices = ['//*[@id="i40"]/div[3]/div', '//*[@id="i43"]/div[3]/div', '//*[@id="i46"]/div[3]/div']
+    choices = ['//*[@id="i40"]/div[3]/div', 
+               '//*[@id="i43"]/div[3]/div', 
+               '//*[@id="i46"]/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
     time.sleep(0.01)
     option.click()
 
     # 4. Gia đình hoặc bạn bè bạn có ai từng khởi nghiệp không?
-    choices = ['//*[@id="i54"]/div[3]/div', '//*[@id="i57"]/div[3]/div']
+    choices = ['//*[@id="i54"]/div[3]/div', 
+               '//*[@id="i57"]/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
     time.sleep(0.01)
     option.click()
 
     # 5. Bạn có kinh nghiệm làm việc trước đây không?
-    choices = ['//*[@id="i65"]/div[3]/div', '//*[@id="i68"]/div[3]/div']
+    choices = ['//*[@id="i65"]/div[3]/div', 
+               '//*[@id="i68"]/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
     time.sleep(0.01)
     option.click()
 
     # 6. Bạn có dự định khởi nghiệp trong tương lai không?
-    choices = ['//*[@id="i76"]/div[3]/div', '//*[@id="i79"]/div[3]/div', '//*[@id="i82"]/div[3]/div']
+    choices = ['//*[@id="i76"]/div[3]/div', 
+               '//*[@id="i79"]/div[3]/div', 
+               '//*[@id="i82"]/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
     time.sleep(0.01)
@@ -331,7 +341,7 @@ for i in range(5):
 
     submit=web.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[1]/div/div[4]/a')
     submit.click()
-    print(f'Done with {i}th loop and {time.time()-start}s')
+    print(f'Done with {i + 1}th loop and {time.time()-start}s')
     time.sleep(0.55)
 
 #Note, to access XPATH: 
