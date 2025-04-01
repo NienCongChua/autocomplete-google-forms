@@ -10,339 +10,293 @@ import random
 #2. Move your mouse to the element for which you want the XPath.
 #3. Look in the right pane of the Developer Tools to find the XPath of the selected element.
 
+n = int(input("Nhập số lần: "))
+
+# web = webdriver.Firefox() 
 web = webdriver.Chrome()
-web.get('https://docs.google.com/forms/d/e/1FAIpQLSeXPR2ZW7O9nxONcfn3HRFyN0Sb8WazUYWQY8PUNMLfC90ibg/viewform')
+web.get('https://docs.google.com/forms/d/e/1FAIpQLSdQ7A33ufRFYnQheD70rsPTwh1P_KOsTXS6Tj-eEnIB4j-O6w/viewform')
 
 time.sleep(1) #give url some time to render
 
-for i in range(5):
+
+for i in range(n):
     print(f"Number {i + 1}")
     start = time.time()
-    # Select one option from multiple choice answers
-    choices = ['//*[@id="i6"]/div[3]/div', '//*[@id="i9"]/div[3]/div']
+
+    submit=web.find_element(By.XPATH,'/html/body/div[1]/div[2]/form/div[2]/div/div[3]/div/div[1]/div/span/span')
+    submit.click()
+    time.sleep(1.1)
+
+    # Phan 1: Thong tin chung
+    # 1. Gioi tinh
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[1]/label/div/div[1]/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[2]/label/div/div[1]/div/div[3]/div']
     option_xpath = random.choice(choices)
-    # option_xpath = '//*[@id="i6"]/div[3]/div'
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
 
     # 2. Bạn đang là sinh viên năm mấy?
-    choices = ['//*[@id="i20"]/div[3]/div', 
-               '//*[@id="i23"]/div[3]/div', 
-               '//*[@id="i26"]/div[3]/div', 
-               '//*[@id="i29"]/div[3]/div', 
-               '//*[@id="i32"]/div[3]/div']
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[1]/label/div/div[1]/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[2]/label/div/div[1]/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[3]/label/div/div[1]/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[4]/label/div/div[1]/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
 
-    # 3. Bạn đã từng tham gia các khóa học hoặc cuộc thi liên quan đến khởi nghiệp chưa?
-    choices = ['//*[@id="i40"]/div[3]/div', 
-               '//*[@id="i43"]/div[3]/div', 
-               '//*[@id="i46"]/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-
-    # 4. Gia đình hoặc bạn bè bạn có ai từng khởi nghiệp không?
-    choices = ['//*[@id="i54"]/div[3]/div', 
-               '//*[@id="i57"]/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-
-    # 5. Bạn có kinh nghiệm làm việc trước đây không?
-    choices = ['//*[@id="i65"]/div[3]/div', 
-               '//*[@id="i68"]/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-
-    # 6. Bạn có dự định khởi nghiệp trong tương lai không?
-    choices = ['//*[@id="i76"]/div[3]/div', 
-               '//*[@id="i79"]/div[3]/div', 
-               '//*[@id="i82"]/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-
-    submit=web.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[3]/div/div[1]/div/span')
+    # Continue
+    submit=web.find_element(By.XPATH,'/html/body/div[1]/div[2]/form/div[2]/div/div[3]/div/div[1]/div[2]/span/span')
     submit.click()
-    time.sleep(0.5)
+    time.sleep(0.9)
 
-    # 7.  Dưới đây là một  số nhận định về "Ý định khởi nghiệp của sinh viên khoa Quản trị kinh doanh - APD". Bạn hãy thể hiện quan điểm của mình bằng cách đánh dấu vào ô thích hợp.
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[6]/div/div/div[3]/div']
+    # Phan 2: Cac yeu to anh huong den ket qua hoc tap theo chuan dau ra cua sinh vien khoi kinh te
+    # I: moi truong hoc tap
+    # a) 
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[6]/div/div/div[3]/div']
+    # b)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[6]/div/div/div[3]/div']
+    # c)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[6]/div/div/div[3]/div']
+    # d)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[6]/div/div/div[3]/div']
+    # e)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
+    time.sleep(0.3)
 
-
-    # 8. Dưới đây là một số nhận định về các yếu tố "Cá nhân" ảnh hưởng đến ý định khởi nghiệp. Bạn hãy thể hiện quan điểm của mình bằng cách đánh dấu vào ô thích hợp.
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[6]/div/div/div[3]/div']
+    # II: Chat luong giang day
+    # a) 
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[6]/div/div/div[3]/div']
+    # b)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[6]/div/div/div[3]/div']
+    # c)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
+    option.click()  
+    # d)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
+    option_xpath = random.choice(choices)
+    option = web.find_element(By.XPATH, option_xpath)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[6]/div/div/div[3]/div']
+    # e)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div', 
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[12]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[12]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[12]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[12]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[12]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
 
-    # 9. Dưới đây là một số nhận định về các yếu tố "Môi trường giáo dục đại học" ảnh hưởng đến ý định khởi nghiệp. Bạn hãy thể hiện quan điểm của mình bằng cách đánh dấu vào ô thích hợp.
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[6]/div/div/div[3]/div']
+    # III: Gia dinh
+    # a)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[6]/div/div/div[3]/div']
+    # b)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[6]/div/div/div[3]/div']
+    # c)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[6]/div/div/div[3]/div']
+    # d)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-
-    # 10. Dưới đây là một nhận định về các yếu tố “ Gia đình và bạn bè" ảnh hưởng đến ý định khởi nghiệp. Bạn hãy thể hiện quan điểm của mình bằng cách đánh dấu vào ô thích hợp.
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[6]/div/div/div[3]/div']
+    # e)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
 
-    # 11. Dưới đây là một số nhận định về các yếu tố "Nguồn vốn"  ảnh hưởng đến ý định khởi nghiệp. Bạn hãy thể hiện quan điểm của mình bằng cách đánh dấu vào ô thích hợp.
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[6]/div/div/div[3]/div']
+    # IV: Moi quan he ban be
+    # a)    
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[6]/div/div/div[3]/div']
+    # b)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[6]/div/div/div[3]/div']
+    # c)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[6]/div/div/div[3]/div']
+    # d)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
-
-    # 12.  Dưới đây là một số nhận định về các yếu tố "Cơ hội và trải nghiệm"  ảnh hưởng đến ý định khởi nghiệp. Bạn hãy thể hiện quan điểm của mình bằng cách đánh dấu vào ô thích hợp.
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[2]/span/div[6]/div/div/div[3]/div']
+    # e)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[4]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[6]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
-    option.click()
-    choices = ['//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div', 
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div',
-               '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[7]/div/div/div[2]/div/div[1]/div/div[8]/span/div[6]/div/div/div[3]/div']
-    option_xpath = random.choice(choices)
-    option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.01)
+    time.sleep(0.3)
     option.click()
 
-    submit=web.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[3]/div/div[1]/div[2]/span/span')
+    # V: Phuong phap hoc tap
+    # a)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
+    option_xpath = random.choice(choices)
+    option = web.find_element(By.XPATH, option_xpath)
+    time.sleep(0.3)
+    option.click()
+    # b)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
+    option_xpath = random.choice(choices)
+    option = web.find_element(By.XPATH, option_xpath)
+    time.sleep(0.3)
+    option.click()  
+    # c)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']    
+    option_xpath = random.choice(choices)   
+    option = web.find_element(By.XPATH, option_xpath)
+    time.sleep(0.3)
+    option.click()
+    # d)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
+    option_xpath = random.choice(choices)
+    option = web.find_element(By.XPATH, option_xpath)
+    time.sleep(0.3)
+    option.click()
+    # e)
+    choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[10]/span/div[3]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[10]/span/div[4]/div/div/div[3]/div',
+               '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']   
+    option_xpath = random.choice(choices)
+    option = web.find_element(By.XPATH, option_xpath)
+    time.sleep(0.3)
+    option.click()
+    
+    # Continue
+    submit=web.find_element(By.XPATH,'/html/body/div[1]/div[2]/form/div[2]/div/div[3]/div/div[1]/div[2]/span/span')
     submit.click()
-    time.sleep(0.55)
-
-    submit=web.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[3]/div/div[1]/div[2]/span/span')
-    submit.click()
-    time.sleep(0.55)
-
+    time.sleep(0.9)
+    # Loop
     submit=web.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[1]/div/div[4]/a')
     submit.click()
+    time.sleep(0.9)
+    
     print(f'Done with {i + 1}th loop and {time.time()-start}s')
-    time.sleep(0.55)
+    time.sleep(0.95)
 
 #Note, to access XPATH: 
 #1. Press Ctrl + Shift + C on your keyboard to open the Developer Tools in your browser.
