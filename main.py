@@ -33,7 +33,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[2]/label/div/div[1]/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
 
     # 2. Bạn đang là sinh viên năm mấy?
@@ -43,7 +43,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[4]/label/div/div[1]/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
 
     # Continue
@@ -60,7 +60,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # b)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
@@ -69,7 +69,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # c)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
@@ -78,7 +78,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # d)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
@@ -87,7 +87,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # e)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div', 
@@ -96,7 +96,8 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
+    option.click()
 
     # II: Chat luong giang day
     # a) 
@@ -106,7 +107,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # b)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div', 
@@ -115,7 +116,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # c)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div', 
@@ -124,7 +125,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()  
     # d)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div', 
@@ -133,7 +134,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # e)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div', 
@@ -142,7 +143,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
 
     # III: Gia dinh
@@ -153,7 +154,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # b)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div',
@@ -162,7 +163,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # c)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div',
@@ -171,7 +172,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # d)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div',
@@ -180,7 +181,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # e)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div',
@@ -189,7 +190,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
 
     # IV: Moi quan he ban be
@@ -200,7 +201,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # b)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div',
@@ -209,7 +210,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # c)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div',
@@ -218,7 +219,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # d)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div',
@@ -227,7 +228,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # e)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div',
@@ -236,7 +237,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
 
     # V: Phuong phap hoc tap
@@ -247,7 +248,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[2]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # b)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[2]/div/div/div[3]/div',
@@ -256,7 +257,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[4]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()  
     # c)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[2]/div/div/div[3]/div',
@@ -265,7 +266,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[6]/span/div[5]/div/div/div[3]/div']    
     option_xpath = random.choice(choices)   
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # d)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[2]/div/div/div[3]/div',
@@ -274,7 +275,7 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[8]/span/div[5]/div/div/div[3]/div']
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     # e)
     choices = ['/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[10]/span/div[2]/div/div/div[3]/div',
@@ -283,11 +284,11 @@ for i in range(n):
                '/html/body/div[1]/div[2]/form/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div/div[10]/span/div[5]/div/div/div[3]/div']   
     option_xpath = random.choice(choices)
     option = web.find_element(By.XPATH, option_xpath)
-    time.sleep(0.3)
+    time.sleep(0.1)
     option.click()
     
     # Continue
-    submit=web.find_element(By.XPATH,'/html/body/div[1]/div[2]/form/div[2]/div/div[3]/div/div[1]/div[2]/span/span')
+    submit=web.find_element(By.XPATH,'//*[@id="mG61Hd"]/div[2]/div/div[3]/div/div[1]/div[2]/span/span')
     submit.click()
     time.sleep(0.9)
     # Loop
